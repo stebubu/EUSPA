@@ -13,19 +13,21 @@ import io
 AWS_ACCESS_KEY = "AKIA5D4NBVNJUZ7VFGJ4"
 AWS_SECRET_KEY = "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"
 AWS_BUCKET_NAME = "euspa"
-
+AWS_DEFAULT_REGION="us-east-1"
+AWS_DEFAULT_OUTPUT="json"
 
 
 # Create an S3 client
 session = boto3.Session(
     aws_access_key_id=AWS_ACCESS_KEY,
-    aws_secret_access_key=AWS_SECRET_KEY
+    aws_secret_access_key=AWS_SECRET_KEY, AWS_DEFAULT_REGION,AWS_DEFAULT_OUTPUT 
 )
 s3_client = session.client('s3')
 
+prefix = ''
 # List available COG files in the S3 bucket
 def list_cog_files(bucket_name):
-    response = s3_client.list_objects_v2(Bucket=bucket_name)
+    response = s3_client.list_objects_v2(Bucket=bucket_name,  Prefix=prefix)
     cog_files = [obj['Key'] for obj in response.get('Contents', []) if obj['Key'].endswith(".tif")]
     return cog_files
 
