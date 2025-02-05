@@ -20,7 +20,9 @@ AWS_DEFAULT_OUTPUT="json"
 # Create an S3 client
 session = boto3.Session(
     aws_access_key_id=AWS_ACCESS_KEY,
-    aws_secret_access_key=AWS_SECRET_KEY, AWS_DEFAULT_REGION,AWS_DEFAULT_OUTPUT 
+    aws_secret_access_key=AWS_SECRET_KEY, 
+    aws_default_region= AWS_DEFAULT_REGION,
+    aws_default_output= AWS_DEFAULT_OUTPUT 
 )
 s3_client = session.client('s3')
 
