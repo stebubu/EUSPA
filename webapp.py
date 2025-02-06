@@ -10,11 +10,11 @@ import matplotlib.pyplot as plt
 import io
 
 # AWS Configuration (Set your own credentials or use IAM roles)
-AWS_ACCESS_KEY = "AKIA5D4NBVNJUZ7VFGJ4"
-AWS_SECRET_KEY = "vv5CpKzjKyuSiHw/RzI88TCQb1hezwrrtyrvVtWJ"
-AWS_BUCKET_NAME = "euspa"
-AWS_DEFAULT_REGION="us-east-1"
-AWS_DEFAULT_OUTPUT="json"
+AWS_ACCESS_KEY = ""
+AWS_SECRET_KEY = ""
+AWS_BUCKET_NAME = ""
+AWS_DEFAULT_REGION=""
+AWS_DEFAULT_OUTPUT=""
 
 
 # Create an S3 client
